@@ -20,9 +20,11 @@ A solução implementada é baseada no clássico algoritmo de **Wagner-Whitin** 
 * **Estado ($i$):** $C(i)$ = O custo mínimo para satisfazer a demanda do dia $i$ até o final.
 * **Decisão ($j$):** No dia $i$ (com estoque zero), decidir fazer um pedido para cobrir a demanda até o dia $j$.
 * **Função Objetivo:** Encontrar $C(0)$, o custo mínimo para todo o período.
-* **Recorrência:** $$C(i) = \min_{i \le j < N} \left\{ K + H(i, j) + C(j+1) \right\}$$
-  
-  Onde $H(i, j)$ é o custo de manter o estoque comprado no dia $i$ para os dias $i+1 \ldots j$.
+* **Recorrência:**
+  A fórmula para o custo em um estado $i$ é o mínimo de todas as decisões $j$ possíveis:
+  C(i) = min { K + H(i, j) + C(j+1) } onde $i \le j < N$.
+
+$H(i, j)$ é o custo de manter o estoque comprado no dia $i$ para os dias $i+1 \ldots j$.
 
 ## 3. Implementações
 
@@ -35,13 +37,13 @@ O arquivo `.ipynb` (Jupyter Notebook) contém a implementação da lógica de PD
 ## 4. Como Executar
 
 1.  Clone este repositório:
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    ```
+  ```bash
+  git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+  ```
 2.  Abra o arquivo `.ipynb` (ex: `otimizacao_estoque.ipynb`) em um ambiente que execute Jupyter Notebooks, como:
-    * [Google Colab](https://colab.research.google.com/) (recomendado, basta fazer o upload)
-    * [Jupyter Notebook](https://jupyter.org/install) (instalação local)
-    * [VS Code](https://code.visualstudio.com/) (com a extensão Python e Jupyter)
+  * [Google Colab](https://colab.research.google.com/) (recomendado, basta fazer o upload)
+  * [Jupyter Notebook](https://jupyter.org/install) (instalação local)
+  * [VS Code](https://code.visualstudio.com/) (com a extensão Python e Jupyter)
 
 3.  No ambiente do Notebook, execute todas as células (`Run All`).
 

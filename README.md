@@ -21,7 +21,8 @@ A solução implementada é baseada no clássico algoritmo de **Wagner-Whitin** 
 * **Decisão ($j$):** No dia $i$ (com estoque zero), decidir fazer um pedido para cobrir a demanda até o dia $j$.
 * **Função Objetivo:** Encontrar $C(0)$, o custo mínimo para todo o período.
 * **Recorrência:** $$C(i) = \min_{i \le j < N} \left\{ K + H(i, j) + C(j+1) \right\}$$
-    Onde $H(i, j)$ é o custo de manter o estoque comprado no dia $i$ para os dias $i+1 \ldots j$.
+  
+  Onde $H(i, j)$ é o custo de manter o estoque comprado no dia $i$ para os dias $i+1 \ldots j$.
 
 ## 3. Implementações
 
